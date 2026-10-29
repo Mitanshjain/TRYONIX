@@ -2,14 +2,14 @@
 # TRYONIX - Python Dependencies
 # ==========================================
 
-# Backend API
+# FastAPI Backend
 fastapi
 uvicorn[standard]
 python-multipart
 
-# Database - PostgreSQL
+# MySQL Database
 sqlalchemy
-psycopg[binary]
+pymysql
 alembic
 
 # Authentication & Security
@@ -31,14 +31,17 @@ numpy
 pandas
 Pillow
 
+# AI Assistant / LLM
+groq
+
+# Model Context Protocol
+mcp
+
+# RAG / Embeddings
+sentence-transformers
+faiss-cpu
+
 # Testing
 pytest
 
-pymysql
-
-
-python-multipart
-pillow
-
-
-httpx
+psycopg[binary]

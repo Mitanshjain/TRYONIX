@@ -7,23 +7,16 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # ==========================================
-# LOAD BACKEND ENVIRONMENT
+# LOAD ENVIRONMENT VARIABLES
 # ==========================================
 
-# config.py -> inference -> tryon -> backend
-# config.py -> inference -> tryon -> backend -> TRYONIX
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 ENV_FILE = PROJECT_ROOT / ".env"
 
 load_dotenv(
     dotenv_path=ENV_FILE,
-    override=True
-)
-
-load_dotenv(
-    dotenv_path=ENV_FILE,
-    override=True
+    override=False
 )
 
 # ==========================================
