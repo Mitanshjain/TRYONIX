@@ -1,0 +1,44 @@
+# Private credentials
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Node.js / Next.js
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+
+# Debug files
+hoodie_debug.jpg
+project_structure.txt
+*.log
+
+# Uploaded and generated images
+uploads/
+generated/
+**/uploads/
+**/generated/
+
+# Model weights
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+
+
+# Frontend Git backup
+frontend-git-backup/
+
+# Frontend environment files
+.env.local
+.env.*.local
+
+# Next.js generated files
+next-env.d.ts

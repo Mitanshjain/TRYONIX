@@ -1,0 +1,44 @@
+# ==========================================
+# TRYONIX - Python Dependencies
+# ==========================================
+
+# Backend API
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database - PostgreSQL
+sqlalchemy
+psycopg[binary]
+alembic
+
+# Authentication & Security
+PyJWT
+pwdlib[argon2]
+email-validator
+
+# Configuration
+python-dotenv
+pydantic
+pydantic-settings
+
+# HTTP Requests
+httpx
+requests
+
+# Data Processing
+numpy
+pandas
+Pillow
+
+# Testing
+pytest
+
+pymysql
+
+
+python-multipart
+pillow
+
+
+httpx

@@ -1,0 +1,61 @@
+﻿id,name,category,image_url,dataset_label,image_status,approved
+6,Black Essential Crew Neck Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/ea7b6656-3f84-4eb3-9099-23e623fc1018.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+7,White Relaxed Oversized Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/ea2ffd4d-9b25-4ca8-9dc2-bd27f1cc59fa.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+8,Navy Vintage Washed Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/4c8f245e-a039-46fd-a6b9-1bb51e83fc05.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+9,Olive Classic Pocket Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/95609fcf-b2c2-4f35-8454-a308262e30ea.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+10,Beige Heavyweight Cotton Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/04b42565-23ce-47d9-8f11-e3f1fb0d5051.jpg,Top,reachable; visual match UNVERIFIED,NO
+11,Charcoal Minimal Graphic Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/6ba8aeb1-a812-4bd7-a0b3-d898aebe3400.jpg,Top,reachable; visual match UNVERIFIED,NO
+12,Cream Striped Everyday Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/534cb9e4-658e-48a9-a9d9-365149ee52e8.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+13,Sky Blue Athletic Fit Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/f968404d-6c3a-465e-9edd-347784880455.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+14,Forest Green Boxy Streetwear Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/c395de85-824c-4cbe-ad6b-ed80f5c15fb7.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+15,Grey Longline Basic Tee,T-Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/4acdd295-b0b4-4991-a6cd-c9d2c322c347.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+16,White Oxford Button-Down Shirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/b0c03127-9dfb-4573-8934-1958396937bf.jpg,Shirt,reachable; visual match UNVERIFIED,NO
+17,Navy Linen Resort Shirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/f2ae0355-82ec-4363-ac61-470d7f422a45.jpg,Undershirt,reachable; visual match UNVERIFIED,NO
+18,Olive Classic Check Shirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/d8445328-a318-434b-9c4e-fa29cf04be41.jpg,Shirt,reachable; visual match UNVERIFIED,NO
+19,Beige Denim Casual Shirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/330f1f98-0d3d-4c64-bd82-518e6e157d08.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+20,Cream Mandarin Collar Shirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/fb145f9c-024a-4177-ae55-4ef413756ee9.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+21,Brown Corduroy Overshirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/29d44695-c6b6-4b76-8ac9-12032990ba5f.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+22,Sky Blue Relaxed Cuban Collar Shirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/e912d309-20d4-44c1-887d-43c4e59c76be.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+23,Forest Green Textured Formal Shirt,Shirt,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/53e1ebfe-5216-4c95-b166-bee422a056f6.jpg,T-Shirt,reachable; visual match UNVERIFIED,NO
+24,Navy Fleece Pullover Hoodie,Hoodie,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/739bafaa-cce9-4322-b16c-21baac21a313.jpg,Hoodie,reachable; visual match UNVERIFIED,NO
+25,Olive Zip-Up Everyday Hoodie,Hoodie,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/598090c2-f12f-4e60-9b23-d556a38117ad.jpg,Hoodie,reachable; visual match UNVERIFIED,NO
+26,Beige Oversized Street Hoodie,Hoodie,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/9526eb58-e1d2-4f3d-aba9-441da1c31f94.jpg,Hoodie,reachable; visual match UNVERIFIED,NO
+27,Cream Minimal Embroidered Hoodie,Hoodie,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/89d00f6f-40c7-4ff5-a84a-11569f86cc72.jpg,Hoodie,reachable; visual match UNVERIFIED,NO
+28,Brown Heavyweight Winter Hoodie,Hoodie,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/537d133a-b3d8-4851-bfa4-071c5179e7bf.jpg,Hoodie,reachable; visual match UNVERIFIED,NO
+29,Sky Blue Colorblock Sport Hoodie,Hoodie,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/a6817831-08d8-49db-b43b-21fdcbac1344.jpg,Hoodie,reachable; visual match UNVERIFIED,NO
+30,Olive Classic Denim Jacket,Jacket,,,NO MATCH,NO
+31,Beige Lightweight Bomber Jacket,Jacket,,,NO MATCH,NO
+32,Charcoal Utility Field Jacket,Jacket,,,NO MATCH,NO
+33,Cream Varsity Street Jacket,Jacket,,,NO MATCH,NO
+34,Sky Blue Quilted Winter Jacket,Jacket,,,NO MATCH,NO
+35,Forest Green Canvas Workwear Jacket,Jacket,,,NO MATCH,NO
+36,Beige Straight Fit Denim Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/c995c900-693d-4dd6-8995-43f3051ec488.jpg,Pants,reachable; visual match UNVERIFIED,NO
+37,Charcoal Slim Fit Indigo Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/97074b7f-706a-4c17-b875-bd9baa5bed0e.jpg,Pants,reachable; visual match UNVERIFIED,NO
+38,Cream Relaxed Black Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/84a4a5a4-fb02-4009-916d-7e82d65c3e12.jpg,Pants,reachable; visual match UNVERIFIED,NO
+39,Brown Vintage Blue Wide-Leg Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/c4f11a12-2fcd-4268-8045-5a00aec7e656.jpg,Pants,reachable; visual match UNVERIFIED,NO
+40,Sky Blue Tapered Grey Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/9a858530-6e0d-4bf0-8900-42055c64ddaf.jpg,Pants,reachable; visual match UNVERIFIED,NO
+41,Grey Washed Baggy Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/600e6a2d-1177-4918-9760-610f2d89dc30.jpg,Pants,reachable; visual match UNVERIFIED,NO
+42,Maroon Classic Dark Denim Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/b61be122-02ff-4a32-8da9-d331cbcd3cce.jpg,Pants,reachable; visual match UNVERIFIED,NO
+43,Black Distressed Street Jeans,Jeans,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/276db6ba-6a50-499f-8a3d-7ede222493df.jpg,Pants,reachable; visual match UNVERIFIED,NO
+44,Charcoal Olive Utility Cargo Pants,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/9b4aa622-dab1-4d43-abc5-e736e0f600fc.jpg,Pants,reachable; visual match UNVERIFIED,NO
+45,Cream Charcoal Multi-Pocket Cargos,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/081b5ec1-13a6-43c8-991f-9ad2020f646a.jpg,Pants,reachable; visual match UNVERIFIED,NO
+46,Brown Sand Relaxed Cargo Pants,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/f6cdc0f4-9615-4e0c-a22b-6972f6fb4e1a.jpg,Pants,reachable; visual match UNVERIFIED,NO
+47,Sky Blue Navy Tactical Cargo Pants,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/c905b7cc-a17a-4c75-b451-87292b51f73a.jpg,Pants,reachable; visual match UNVERIFIED,NO
+48,Grey Stone Washed Cargo Pants,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/f97dba0a-37f7-452b-9159-90d4d6757473.jpg,Pants,reachable; visual match UNVERIFIED,NO
+49,Maroon Khaki Straight Cargo Pants,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/2f0b7b04-c238-465b-8e7a-08fabec28223.jpg,Pants,reachable; visual match UNVERIFIED,NO
+50,Black Grey Parachute Cargo Pants,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/223939a1-c2a0-41c7-8956-fb1b6370ebeb.jpg,Pants,reachable; visual match UNVERIFIED,NO
+51,White Brown Workwear Cargo Pants,Cargo Pants,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/0098b991-e36e-4ef1-b5ee-4154b21e2a92.jpg,Pants,reachable; visual match UNVERIFIED,NO
+52,Cream Floral Midi Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/e3c8e575-c5b8-4c4c-9f49-62b37b611b6b.jpg,Dress,reachable; visual match UNVERIFIED,NO
+53,Brown Satin Evening Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/e6a8b33f-279c-4072-8dba-229d94205e55.jpg,Dress,reachable; visual match UNVERIFIED,NO
+54,Sky Blue Ribbed Bodycon Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/4b8e5d41-3e12-4d2b-8634-e62e71d613ff.jpg,Dress,reachable; visual match UNVERIFIED,NO
+55,Grey Cotton Shirt Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/cb61ac26-e7a5-42a6-8471-66f69a9ccd4d.jpg,Dress,reachable; visual match UNVERIFIED,NO
+56,Maroon Pleated A-Line Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/21059bce-cf86-4064-b9af-5dbbbc6e7593.jpg,Dress,reachable; visual match UNVERIFIED,NO
+57,Black Summer Wrap Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/334bc6ef-fc89-4226-90f3-dd63645ec845.jpg,Dress,reachable; visual match UNVERIFIED,NO
+58,White Maxi Tiered Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/f28fb711-b7bf-4d6e-9935-6970a311a14e.jpg,Dress,reachable; visual match UNVERIFIED,NO
+59,Navy Minimal Slip Dress,Dress,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/82878359-5004-44b9-8a93-6234169793a4.jpg,Dress,reachable; visual match UNVERIFIED,NO
+60,Brown Tailored Straight Trousers,Trousers,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/afc40786-a90b-48ed-a78f-dfb8833d065d.jpg,Pants,reachable; visual match UNVERIFIED,NO
+61,Sky Blue Relaxed Linen Trousers,Trousers,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/8f0c3bd9-5784-4268-b5ee-020122a0dcd3.jpg,Pants,reachable; visual match UNVERIFIED,NO
+62,Grey Wide-Leg Everyday Pants,Trousers,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/9ff5041a-81d2-417c-b6a0-453a2b6b1052.jpg,Pants,reachable; visual match UNVERIFIED,NO
+63,Maroon Pleated Smart Trousers,Trousers,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/52889e96-b086-4375-92ba-9bd2ddb26fb9.jpg,Pants,reachable; visual match UNVERIFIED,NO
+64,Black Cotton Chino Pants,Trousers,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/0fe5eeb6-316f-4f60-b604-8a1b25e23433.jpg,Pants,reachable; visual match UNVERIFIED,NO
+65,White Drawstring Lounge Trousers,Trousers,https://raw.githubusercontent.com/alexeygrigorev/clothing-dataset/master/images/4e6276b7-564c-4a32-9218-13cfc9148263.jpg,Pants,reachable; visual match UNVERIFIED,NO

@@ -1,0 +1,77 @@
+
+# TRYONIX KNOWLEDGE BASE
+
+## About TRYONIX
+
+TRYONIX is an AI-powered fashion e-commerce
+platform with a virtual try-on feature.
+
+Customers can explore fashion products,
+view product details, and use AI-powered
+virtual try-on to visualize clothing.
+
+## Product Browsing
+
+Customers can visit the Shop page to
+browse available fashion products.
+
+Each product has a dedicated details page.
+
+Actual product prices and availability
+must be checked from the live product database.
+
+## AI Virtual Try-On
+
+TRYONIX provides an AI-powered virtual
+try-on feature.
+
+Customers can upload a personal photograph
+and select a supported clothing item.
+
+The system generates a preview showing
+how the selected garment may look on them.
+
+Virtual try-on results are AI-generated
+visualizations and may not perfectly represent
+real-world fit, size, or fabric appearance.
+
+## How to Use Virtual Try-On
+
+Step 1: Open the TRYONIX website.
+
+Step 2: Navigate to the virtual try-on page.
+
+Step 3: Upload a clear photograph.
+
+Step 4: Select a supported garment.
+
+Step 5: Start the AI virtual try-on process.
+
+Step 6: Wait for the generated preview.
+
+The virtual try-on service may be temporarily
+unavailable when the external AI inference
+server is offline.
+
+## AI Shopping Assistant
+
+TRYONIX includes an AI shopping assistant
+that supports text and voice interaction.
+
+Customers can ask questions about outfits,
+fashion recommendations, product browsing,
+and the virtual try-on process.
+
+## Important Limitations
+
+The shopping assistant must not invent
+product prices, stock availability,
+shipping policies, return policies,
+or order information.
+
+Live product information should be obtained
+from the TRYONIX product database.
+
+Shipping, return, and payment policies
+must be confirmed from official store
+information before providing specific details.

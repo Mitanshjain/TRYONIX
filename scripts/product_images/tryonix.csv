@@ -1,0 +1,61 @@
+id,name,category,gender,image_url
+6,"Black Essential Crew Neck Tee",T-Shirt,Men,NULL
+7,"White Relaxed Oversized Tee",T-Shirt,Men,NULL
+8,"Navy Vintage Washed Tee",T-Shirt,Men,NULL
+9,"Olive Classic Pocket Tee",T-Shirt,Men,NULL
+10,"Beige Heavyweight Cotton Tee",T-Shirt,Men,NULL
+11,"Charcoal Minimal Graphic Tee",T-Shirt,Men,NULL
+12,"Cream Striped Everyday Tee",T-Shirt,Men,NULL
+13,"Sky Blue Athletic Fit Tee",T-Shirt,Men,NULL
+14,"Forest Green Boxy Streetwear Tee",T-Shirt,Men,NULL
+15,"Grey Longline Basic Tee",T-Shirt,Men,NULL
+16,"White Oxford Button-Down Shirt",Shirt,Men,NULL
+17,"Navy Linen Resort Shirt",Shirt,Men,NULL
+18,"Olive Classic Check Shirt",Shirt,Men,NULL
+19,"Beige Denim Casual Shirt",Shirt,Men,NULL
+20,"Cream Mandarin Collar Shirt",Shirt,Men,NULL
+21,"Brown Corduroy Overshirt",Shirt,Men,NULL
+22,"Sky Blue Relaxed Cuban Collar Shirt",Shirt,Men,NULL
+23,"Forest Green Textured Formal Shirt",Shirt,Men,NULL
+24,"Navy Fleece Pullover Hoodie",Hoodie,Unisex,NULL
+25,"Olive Zip-Up Everyday Hoodie",Hoodie,Unisex,NULL
+26,"Beige Oversized Street Hoodie",Hoodie,Unisex,NULL
+27,"Cream Minimal Embroidered Hoodie",Hoodie,Unisex,NULL
+28,"Brown Heavyweight Winter Hoodie",Hoodie,Unisex,NULL
+29,"Sky Blue Colorblock Sport Hoodie",Hoodie,Unisex,NULL
+30,"Olive Classic Denim Jacket",Jacket,Men,NULL
+31,"Beige Lightweight Bomber Jacket",Jacket,Men,NULL
+32,"Charcoal Utility Field Jacket",Jacket,Men,NULL
+33,"Cream Varsity Street Jacket",Jacket,Men,NULL
+34,"Sky Blue Quilted Winter Jacket",Jacket,Men,NULL
+35,"Forest Green Canvas Workwear Jacket",Jacket,Men,NULL
+36,"Beige Straight Fit Denim Jeans",Jeans,Men,NULL
+37,"Charcoal Slim Fit Indigo Jeans",Jeans,Men,NULL
+38,"Cream Relaxed Black Jeans",Jeans,Men,NULL
+39,"Brown Vintage Blue Wide-Leg Jeans",Jeans,Men,NULL
+40,"Sky Blue Tapered Grey Jeans",Jeans,Men,NULL
+41,"Grey Washed Baggy Jeans",Jeans,Men,NULL
+42,"Maroon Classic Dark Denim Jeans",Jeans,Men,NULL
+43,"Black Distressed Street Jeans",Jeans,Men,NULL
+44,"Charcoal Olive Utility Cargo Pants","Cargo Pants",Men,NULL
+45,"Cream Charcoal Multi-Pocket Cargos","Cargo Pants",Men,NULL
+46,"Brown Sand Relaxed Cargo Pants","Cargo Pants",Men,NULL
+47,"Sky Blue Navy Tactical Cargo Pants","Cargo Pants",Men,NULL
+48,"Grey Stone Washed Cargo Pants","Cargo Pants",Men,NULL
+49,"Maroon Khaki Straight Cargo Pants","Cargo Pants",Men,NULL
+50,"Black Grey Parachute Cargo Pants","Cargo Pants",Men,NULL
+51,"White Brown Workwear Cargo Pants","Cargo Pants",Men,NULL
+52,"Cream Floral Midi Dress",Dress,Women,NULL
+53,"Brown Satin Evening Dress",Dress,Women,NULL
+54,"Sky Blue Ribbed Bodycon Dress",Dress,Women,NULL
+55,"Grey Cotton Shirt Dress",Dress,Women,NULL
+56,"Maroon Pleated A-Line Dress",Dress,Women,NULL
+57,"Black Summer Wrap Dress",Dress,Women,NULL
+58,"White Maxi Tiered Dress",Dress,Women,NULL
+59,"Navy Minimal Slip Dress",Dress,Women,NULL
+60,"Brown Tailored Straight Trousers",Trousers,Unisex,NULL
+61,"Sky Blue Relaxed Linen Trousers",Trousers,Unisex,NULL
+62,"Grey Wide-Leg Everyday Pants",Trousers,Unisex,NULL
+63,"Maroon Pleated Smart Trousers",Trousers,Unisex,NULL
+64,"Black Cotton Chino Pants",Trousers,Unisex,NULL
+65,"White Drawstring Lounge Trousers",Trousers,Unisex,NULL
