@@ -38,10 +38,10 @@ groq
 mcp
 
 # RAG / Embeddings
-sentence-transformers
-faiss-cpu
+
 
 # Testing
 pytest
 
 psycopg[binary]
+scikit-learn

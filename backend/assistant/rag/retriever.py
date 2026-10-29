@@ -1,18 +1,14 @@
 
 # ==========================================
-# TRYONIX - RAG RETRIEVER
-# Sentence Transformers + FAISS
+# TRYONIX - LIGHTWEIGHT RAG RETRIEVER
+# TF-IDF + COSINE SIMILARITY
 # ==========================================
 
 from pathlib import Path
 
-import faiss
-from sentence_transformers import SentenceTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
-
-# ==========================================
-# CONFIGURATION
-# ==========================================
 
 KNOWLEDGE_PATH = (
     Path(__file__).resolve().parent
@@ -20,17 +16,10 @@ KNOWLEDGE_PATH = (
     / "tryonix_knowledge.txt"
 )
 
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-
-
-# ==========================================
-# LOAD KNOWLEDGE BASE
-# ==========================================
 
 def load_knowledge():
     text = KNOWLEDGE_PATH.read_text(encoding="utf-8")
 
-    # Each section becomes a searchable chunk.
     chunks = [
         section.strip()
         for section in text.split("## ")
@@ -40,33 +29,25 @@ def load_knowledge():
     return chunks
 
 
-# ==========================================
-# CREATE RAG RETRIEVER
-# ==========================================
-
 class RAGRetriever:
 
     def __init__(self):
-
-        print("Loading TRYONIX embedding model...")
-
-        self.model = SentenceTransformer(EMBEDDING_MODEL)
+        print("Loading lightweight TRYONIX RAG...")
 
         self.documents = load_knowledge()
 
-        # Convert documents into normalized vectors.
-        embeddings = self.model.encode(
-            self.documents,
-            convert_to_numpy=True,
-            normalize_embeddings=True
+        if not self.documents:
+            raise ValueError("TRYONIX knowledge base is empty.")
+
+        self.vectorizer = TfidfVectorizer(
+            stop_words="english",
+            ngram_range=(1, 2),
+            sublinear_tf=True
         )
 
-        # Create FAISS index for similarity search.
-        dimension = embeddings.shape[1]
-
-        self.index = faiss.IndexFlatIP(dimension)
-
-        self.index.add(embeddings.astype("float32"))
+        self.document_vectors = self.vectorizer.fit_transform(
+            self.documents
+        )
 
         print(
             f"TRYONIX RAG ready: "
@@ -74,38 +55,33 @@ class RAGRetriever:
         )
 
     def retrieve(self, query: str, top_k: int = 3):
+        if not query.strip() or top_k <= 0:
+            return []
 
-        # Convert customer question into an embedding.
-        query_embedding = self.model.encode(
-            [query],
-            convert_to_numpy=True,
-            normalize_embeddings=True
-        )
+        query_vector = self.vectorizer.transform([query])
 
-        # Search for most relevant chunks.
-        scores, indices = self.index.search(
-            query_embedding.astype("float32"),
-            min(top_k, len(self.documents))
-        )
+        scores = cosine_similarity(
+            query_vector,
+            self.document_vectors
+        )[0]
+
+        ranked_indices = scores.argsort()[::-1][:top_k]
 
         results = []
 
-        for score, index in zip(scores[0], indices[0]):
-            if index >= 0:
-                results.append({
-                    "content": self.documents[index],
-                    "score": float(score)
-                })
+        for index in ranked_indices:
+            if scores[index] <= 0:
+                continue
+
+            results.append({
+                "content": self.documents[index],
+                "score": float(scores[index])
+            })
 
         return results
 
 
-# ==========================================
-# TEST RETRIEVER
-# ==========================================
-
 if __name__ == "__main__":
-
     retriever = RAGRetriever()
 
     question = "How do I use virtual try-on?"
