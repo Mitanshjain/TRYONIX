@@ -4,25 +4,30 @@
 # ==========================================
 
 import logging
-import os
 import mimetypes
+import os
 from pathlib import Path
 
 import httpx
+from dotenv import load_dotenv
+
+
+# ==========================================
+# ENVIRONMENT CONFIGURATION
+# ==========================================
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+
+# Render environment variables take priority.
+load_dotenv(
+    dotenv_path=PROJECT_ROOT / ".env",
+    override=False,
+)
 
 from backend.tryon.inference.config import (
     AI_INFERENCE_URL,
     AI_REQUEST_TIMEOUT,
     SUPPORTED_CLOTHING_TYPES,
-)
-
-from dotenv import load_dotenv
-
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-
-load_dotenv(
-    dotenv_path=PROJECT_ROOT / ".env",
-    override=True,
 )
 
 
@@ -39,24 +44,27 @@ logger = logging.getLogger(__name__)
 
 class TryOnInferenceEngine:
     """
-    Connects the TRYONIX FastAPI backend
-    to the Kaggle CatVTON GPU inference API.
+    Connects TRYONIX FastAPI backend to the
+    Kaggle CatVTON GPU inference service.
 
-    GPU API:
+    Endpoints:
         GET  /health
         POST /generate
 
-    Required multipart fields:
+    Authentication:
+        x-api-key: AI_INFERENCE_API_KEY
+
+    Multipart fields:
         person_image
         garment_image
-
-    Optional form field:
         clothing_type
     """
 
     def __init__(self):
 
-        self.api_url = AI_INFERENCE_URL.strip().rstrip("/")
+        self.api_url = (
+            AI_INFERENCE_URL.strip().rstrip("/")
+        )
 
         self.timeout = max(
             float(AI_REQUEST_TIMEOUT),
@@ -64,14 +72,51 @@ class TryOnInferenceEngine:
         )
 
         self.api_key = os.getenv(
-            "AI_INFERENCE_API_KEY",
-            "",
-        )
+            "AI_INFERENCE_API_KEY", ""
+        ).strip()
 
         logger.info(
-            "CatVTON inference engine initialized | configured=%s",
+            "CatVTON initialized | "
+            "url_configured=%s | "
+            "key_configured=%s | "
+            "key_length=%s",
             bool(self.api_url),
+            bool(self.api_key),
+            len(self.api_key),
         )
+
+        if not self.api_url:
+            logger.warning(
+                "AI_INFERENCE_URL is missing."
+            )
+
+        if not self.api_key:
+            logger.warning(
+                "AI_INFERENCE_API_KEY is missing."
+            )
+
+    # ==========================================
+    # VALIDATE CONFIGURATION
+    # ==========================================
+
+    def validate_configuration(self):
+
+        if not self.api_url:
+            raise RuntimeError(
+                "AI_INFERENCE_URL is not configured."
+            )
+
+        if not self.api_url.startswith(
+            ("http://", "https://")
+        ):
+            raise RuntimeError(
+                "Invalid AI_INFERENCE_URL."
+            )
+
+        if not self.api_key:
+            raise RuntimeError(
+                "AI_INFERENCE_API_KEY is not configured."
+            )
 
     # ==========================================
     # GENERATE VIRTUAL TRY-ON
@@ -85,21 +130,22 @@ class TryOnInferenceEngine:
     ) -> bytes:
 
         # --------------------------------------
-        # STEP 1: VALIDATE CLOTHING CATEGORY
+        # STEP 1: VALIDATE CONFIGURATION
         # --------------------------------------
+
+        self.validate_configuration()
+
+        # --------------------------------------
+        # STEP 2: VALIDATE CLOTHING TYPE
+        # --------------------------------------
+
+        clothing_type = (
+            clothing_type.strip().lower()
+        )
 
         if clothing_type not in SUPPORTED_CLOTHING_TYPES:
             raise ValueError(
                 f"Unsupported clothing type: {clothing_type}"
-            )
-
-        # --------------------------------------
-        # STEP 2: VALIDATE GPU CONFIGURATION
-        # --------------------------------------
-
-        if not self.api_url:
-            raise RuntimeError(
-                "AI_INFERENCE_URL is not configured."
             )
 
         # --------------------------------------
@@ -120,7 +166,7 @@ class TryOnInferenceEngine:
             )
 
         # --------------------------------------
-        # STEP 4: DETECT IMAGE MIME TYPES
+        # STEP 4: DETECT MIME TYPES
         # --------------------------------------
 
         person_mime = (
@@ -134,38 +180,39 @@ class TryOnInferenceEngine:
         )
 
         # --------------------------------------
-        # STEP 5: PREPARE REQUEST HEADERS
+        # STEP 5: AUTHENTICATION HEADER
         # --------------------------------------
 
-        # ==========================================
-        # GPU API AUTHENTICATION
-        # ==========================================
-
-        headers = {}
-
-        if self.api_key:
-            headers["x-api-key"] = self.api_key
-
-
-
+        headers = {
+            "x-api-key": self.api_key,
+            "Accept": "image/png",
+        }
 
         logger.info(
-            "TRYONIX -> CatVTON | category=%s | endpoint=/generate",
+            "TRYONIX -> CatVTON | "
+            "category=%s | "
+            "endpoint=/generate | "
+            "authentication_configured=%s",
             clothing_type,
+            bool(self.api_key),
         )
 
         # --------------------------------------
-        # STEP 6: SEND IMAGES TO KAGGLE GPU
+        # STEP 6: HTTP TIMEOUT
+        # --------------------------------------
+
+        timeout_config = httpx.Timeout(
+            connect=30.0,
+            read=self.timeout,
+            write=120.0,
+            pool=30.0,
+        )
+
+        # --------------------------------------
+        # STEP 7: SEND REQUEST TO GPU
         # --------------------------------------
 
         try:
-
-            timeout_config = httpx.Timeout(
-                connect=30.0,
-                read=self.timeout,
-                write=120.0,
-                pool=30.0,
-            )
 
             async with httpx.AsyncClient(
                 timeout=timeout_config,
@@ -197,17 +244,38 @@ class TryOnInferenceEngine:
                         },
                     )
 
-                # Raise exception for HTTP 4xx/5xx
-                response.raise_for_status()
+            # ----------------------------------
+            # STEP 8: HANDLE AUTHENTICATION
+            # ----------------------------------
+
+            if response.status_code == 401:
+
+                logger.error(
+                    "CatVTON authentication failed | "
+                    "HTTP 401 | "
+                    "Check AI_INFERENCE_API_KEY "
+                    "on Render and Kaggle."
+                )
+
+                raise RuntimeError(
+                    "GPU authentication failed. "
+                    "Check AI_INFERENCE_API_KEY."
+                )
+
+            # ----------------------------------
+            # STEP 9: HANDLE OTHER HTTP ERRORS
+            # ----------------------------------
+
+            response.raise_for_status()
 
         # --------------------------------------
-        # STEP 7: HANDLE TIMEOUT
+        # STEP 10: TIMEOUT HANDLING
         # --------------------------------------
 
         except httpx.TimeoutException as exc:
 
             logger.exception(
-                "CatVTON inference timed out"
+                "CatVTON GPU inference timed out."
             )
 
             raise RuntimeError(
@@ -215,15 +283,16 @@ class TryOnInferenceEngine:
             ) from exc
 
         # --------------------------------------
-        # STEP 8: HANDLE GPU HTTP ERRORS
+        # STEP 11: HTTP ERROR HANDLING
         # --------------------------------------
 
         except httpx.HTTPStatusError as exc:
 
             logger.error(
-                "CatVTON GPU HTTP %s | Response: %s",
+                "CatVTON HTTP error | "
+                "status=%s | response=%s",
                 exc.response.status_code,
-                exc.response.text[:1000],
+                exc.response.text[:500],
             )
 
             raise RuntimeError(
@@ -232,15 +301,15 @@ class TryOnInferenceEngine:
             ) from exc
 
         # --------------------------------------
-        # STEP 9: HANDLE CONNECTION ERRORS
+        # STEP 12: CONNECTION ERROR HANDLING
         # --------------------------------------
 
         except httpx.RequestError as exc:
 
             logger.exception(
-                "CatVTON GPU connection failed | type=%s | details=%r",
+                "CatVTON connection failed | "
+                "error_type=%s",
                 type(exc).__name__,
-                exc,
             )
 
             raise RuntimeError(
@@ -248,19 +317,20 @@ class TryOnInferenceEngine:
             ) from exc
 
         # --------------------------------------
-        # STEP 10: VALIDATE GENERATED IMAGE
+        # STEP 13: VALIDATE RESPONSE
         # --------------------------------------
 
         content_type = response.headers.get(
-            "content-type",
-            "",
+            "content-type", ""
         ).lower()
 
         if not content_type.startswith("image/png"):
+
             logger.error(
-                "Unexpected GPU response | content-type=%s | body=%s",
+                "Unexpected GPU response | "
+                "content_type=%s | status=%s",
                 content_type,
-                response.content[:300],
+                response.status_code,
             )
 
             raise RuntimeError(
@@ -268,24 +338,31 @@ class TryOnInferenceEngine:
             )
 
         if not response.content:
+
+            logger.error(
+                "CatVTON returned empty image."
+            )
+
             raise RuntimeError(
                 "GPU returned an empty image."
             )
 
         # --------------------------------------
-        # STEP 11: SUCCESS
+        # STEP 14: SUCCESS
         # --------------------------------------
 
         logger.info(
-            "TRYONIX virtual try-on generated successfully | bytes=%s",
+            "TRYONIX virtual try-on generated | "
+            "bytes=%s | clothing_type=%s",
             len(response.content),
+            clothing_type,
         )
 
         return response.content
 
 
 # ==========================================
-# GLOBAL INFERENCE ENGINE INSTANCE
+# GLOBAL ENGINE INSTANCE
 # ==========================================
 
 tryon_engine = TryOnInferenceEngine()
